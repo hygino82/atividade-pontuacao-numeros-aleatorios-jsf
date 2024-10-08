@@ -1,18 +1,24 @@
 package br.ejb;
 
-import br.data.crud.CrudUsuario;
-import br.data.model.Usuario;
+import br.data.crud.CrudUsuarioPontuacao;
+import br.data.model.PontuacaoUsuario;
 import java.util.List;
-import javax.ejb.Stateless;
+import javax.ejb.Stateful;
 
 /**
  *
  * @author Adroaldo Hygino Ferreira
  */
-@Stateless
+@Stateful
 public class EjbUsuario {
 
-    public List<Usuario> getAll() {
-        return new CrudUsuario().getAll();
+    private final CrudUsuarioPontuacao crudUsuarioPontuacao = CrudUsuarioPontuacao.getInstance();
+
+    public void adicionarPontuacaoUsuario(String nome, boolean verificacao) {
+        crudUsuarioPontuacao.adicionarPontuacaoUsuario(nome, verificacao);
+    }
+
+    public List<PontuacaoUsuario> getAll() {
+        return crudUsuarioPontuacao.getLista();
     }
 }

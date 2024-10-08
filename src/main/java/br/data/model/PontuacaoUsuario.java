@@ -8,10 +8,10 @@ public class PontuacaoUsuario implements Comparable<PontuacaoUsuario> {
 
     private Usuario usuario;
     private int pontuacao;
-    
-    public PontuacaoUsuario(Usuario usuario) {
+
+    public PontuacaoUsuario(Usuario usuario, int pontuacao) {
         this.usuario = usuario;
-        pontuacao = 0;
+        this.pontuacao = pontuacao;
     }
 
     public Usuario getUsuario() {

@@ -14,7 +14,23 @@
             =<h:inputText value="#{jsfUsuario.resultado}"/><br></br>
             <h:commandButton value="Verificar" action="#{jsfUsuario.verificarSoma()}"/> <br></br>
             <h:outputText value="#{jsfUsuario.resultadoVerificacao}"/>
-        </h:form>      
+            <h:outputText value="#{jsfUsuario.frase}"/>
+            
+        </h:form>
+
+        <h:form>
+            <h:dataTable value="#{jsfUsuario.lista}" var="item">
+                <h:column>
+                    <h:outputText value="#{item}"/>                  
+                </h:column>
+                <h:column>
+                    <h:outputText value="#{item.usuario.nome}"/>                  
+                </h:column>
+                <h:column>
+                    <h:outputText value="#{item.pontuacao}"/>                  
+                </h:column>
+            </h:dataTable>
+        </h:form>
     </h:body>
 </html>
 

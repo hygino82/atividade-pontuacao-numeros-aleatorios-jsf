@@ -1,19 +1,25 @@
 package br.data.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 /**
  *
  * @author Adroaldo Hygino Ferreira
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Usuario {
 
-    private int codigo;
     private String nome;
 
+    public Usuario(String nome) {
+        this.nome = nome;
+    }
+
+    public Usuario() {
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }
